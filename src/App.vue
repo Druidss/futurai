@@ -1,3 +1,6 @@
+<!-- 初始化游戏数据，控制全局状态。
+渲染 Map、PlayerStatus 和 RateMeSystem 组件 -->
+
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 </script>
