@@ -7,20 +7,33 @@
   <div>
     <div class="card-layout">
       <!-- Display the 6x6 card layout here -->
+      <Card v-for="(card, index) in cards" :key="index" :cards="cards" />
     </div>
     <button @click="extractRandomCard">Extract Random Card</button>
     <button @click="placeCard">Place Card</button>
-    <Card v-for="(card, index) in cards" :key="index" :card="card" />
+    
   </div>
 </template>
 
 <script>
 import Card from './Card.vue';
 export default {
+  name: 'MapComponent',
+  components: {
+    Card
+  },
   data() {
     return {
       cardLayout: [], // Array to store the card layout
-      extractedCard: null // Variable to store the extracted card
+      extractedCard: null, // Variable to store the extracted card
+       cards: [
+        {
+          title: 'Event',
+          description: 'Choose your choice',
+          flipped: false,
+          image: 'path/to/your/card/image.jpg', // replace with your card image path
+        },
+      ],
     };
   },
   methods: {

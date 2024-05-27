@@ -11,7 +11,7 @@
     >
       <h3>{{ card.title }}</h3>
       <p>{{ card.description }}</p>
-      <p v-if="card.isKeyEvent">关键事件</p>
+      <p v-if="card.isKeyEvent">EVENT</p>
     </div>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
   name: 'CardComponent',
   props: {
     cards: {
-      type: Array,
+      type: Object,
       required: true,
     },
   },
