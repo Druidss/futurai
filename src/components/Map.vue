@@ -10,10 +10,12 @@
     </div>
     <button @click="extractRandomCard">Extract Random Card</button>
     <button @click="placeCard">Place Card</button>
+    <Card v-for="(card, index) in cards" :key="index" :card="card" />
   </div>
 </template>
 
 <script>
+import Card from './Card.vue';
 export default {
   data() {
     return {

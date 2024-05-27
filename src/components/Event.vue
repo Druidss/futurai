@@ -3,6 +3,7 @@
 提供事件选项（单选题或多选题）。
 根据玩家的选择更新 Rate Me System 的分数。 -->
 
+
 <template>
   <div>
     <h2>{{ event.title }}</h2>

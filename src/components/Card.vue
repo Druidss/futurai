@@ -25,11 +25,14 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      cardBack: '../assets/imgs/back.png', // replace with your card back image path
+    };
+  },
   methods: {
     handleCardClick(card) {
-      // 处理卡牌被点击后的逻辑
-      console.log('Clicked card:', card);
-      // 在这里添加您的自定义逻辑
+      card.flipped = !card.flipped;
     },
   },
 };
