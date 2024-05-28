@@ -7,7 +7,9 @@
   <div>
     <div class="card-layout">
       <!-- Display the 6x6 card layout here -->
-      <Card v-for="(card, index) in cards" :key="index" :cards="cards" />
+      <div v-for="(row, rowIndex) in cardLayout" :key="`row-${rowIndex}`">
+        <Card v-for="(card, index) in cardLayout" :key="index" :cards="cards" />
+      </div>
     </div>
     <button @click="extractRandomCard">Extract Random Card</button>
     <button @click="placeCard">Place Card</button>
@@ -24,14 +26,14 @@ export default {
   },
   data() {
     return {
-      cardLayout: [], // Array to store the card layout
+      cardLayout: Array(6).fill().map(() => Array(6).fill({})), 
       extractedCard: null, // Variable to store the extracted card
        cards: [
         {
           title: 'Event',
           description: 'Choose your choice',
           flipped: false,
-          image: 'path/to/your/card/image.jpg', // replace with your card image path
+          image: 'path/to/your/card/image.jpg', 
         },
       ],
     };
@@ -51,6 +53,8 @@ export default {
 
 <style>
 .card-layout {
-  /* Add styling for the card layout */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
 }
 </style>

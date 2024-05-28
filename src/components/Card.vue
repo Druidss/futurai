@@ -46,12 +46,14 @@ export default {
 }
 
 .card {
-  width: 200px;
+  width: 100%; 
+  aspect-ratio: 108 / 200; /* set the aspect ratio to 108:200 */
   padding: 16px;
   margin: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
+  color: antiquewhite;
 }
 </style>
 
