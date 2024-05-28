@@ -7,7 +7,7 @@
   <div>
     <div class="card-layout">
       <!-- Display the 6x6 card layout here -->
-      <div v-for="(row, rowIndex) in cardLayout" :key="`row-${rowIndex}`">
+      <div v-for="(row, rowIndex) in cardLayout" :key="rowIndex">
         <Card v-for="(card, index) in cardLayout" :key="index" :cards="cards" />
       </div>
     </div>
