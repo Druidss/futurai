@@ -33,6 +33,7 @@ export default {
           title: 'Event',
           description: 'Choose your choice',
           flipped: false,
+          choices: ['Choice 1', 'Choice 2', 'Choice 3'],
           image: 'path/to/your/card/image.jpg', 
         },
       ],
