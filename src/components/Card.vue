@@ -37,6 +37,7 @@
 <script>
 
 import cardBack from '../assets/imgs/cardback.png'; 
+import { reactive, toRefs } from 'vue';
 
 export default {
   name: 'CardComponent',
@@ -54,31 +55,39 @@ export default {
       selectedChoices: [],
     };
   },
+
   methods: {
     handleCardClick(card) {
       card.flipped = !card.flipped;
     },
-    initializeChoices(cardIndex, choiceIndex) {
-      if (!this.selectedChoices[cardIndex]) {
-        this.$set(this.selectedChoices, cardIndex, []);
-      }
-      if (!this.selectedChoices[cardIndex][choiceIndex]) {
-        this.$set(this.selectedChoices[cardIndex], choiceIndex, false);
-      }
-    },
-    storeCheckboxStates() {
-      // Your logic to store checkbox states
-      console.log(this.selectedChoices);
-    },
-    handleCheckboxChange(cardIndex, choiceIndex) {
-      this.initializeChoices(cardIndex, choiceIndex);
-      this.storeCheckboxStates();
-    },
   },
-    mounted() {
-    // Example of initializing for a predefined structure (adapt as needed)
-    this.initializeChoices(0, 0);  // Initializes selectedChoices[0][0]
-    this.initializeChoices(0, 1);  // Initializes selectedChoices[0][1]
+
+  setup() {
+    const state = reactive({
+      selectedChoices: []
+    });
+
+    const initializeChoices = (cardIndex, choiceIndex) => {
+      if (!state.selectedChoices[cardIndex]) {
+        state.selectedChoices[cardIndex] = []; // Directly set the array
+      }
+      // Ensure the inner array at choiceIndex is initialized
+      if (typeof state.selectedChoices[cardIndex][choiceIndex] === 'undefined') {
+        state.selectedChoices[cardIndex][choiceIndex] = false; // Initialize the boolean value
+      }
+    };
+
+    const handleCheckboxChange = (cardIndex, choiceIndex) => {
+      initializeChoices(cardIndex, choiceIndex);
+      storeCheckboxStates();
+    };
+    const storeCheckboxStates = () => {
+      console.log(state.selectedChoices);
+    };
+   return {
+      ...toRefs(state),
+      handleCheckboxChange
+    };
   }
 };
 </script>

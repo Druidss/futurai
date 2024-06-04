@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "AI investment form",
+    "description": "there is an ai-based investment company that uses uses advanced algorithm& data analysis. would you trust this company",
+    "flipped": false,
+    "choices": ["Choice 1", "Choice 2", "Choice 3"],
+    "image": "../../assets/imgs/cardinfo.png"
+  },
+  {
+    "id": 2,
+    "title": "Event 2",
+    "description": "Choose your choice",
+    "flipped": false,
+    "choices": ["Choice 1", "Choice 2", "Choice 3"],
+    "image": "../../assets/imgs/cardinfo.png"
+  },
+  {
+    "id": 3,
+    "title": "Event 3",
+    "description": "Choose your choice",
+    "flipped": false,
+    "choices": ["Choice 1", "Choice 2", "Choice 3"],
+    "image": "../../assets/imgs/cardinfo.png"
+  }
+]

@@ -6,19 +6,18 @@
 <template>
   <div>
     <div class="card-layout">
-      <!-- Display the 6x6 card layout here -->
       <div v-for="(row, rowIndex) in cardLayout" :key="rowIndex">
         <Card v-for="(card, index) in cardLayout" :key="index" :cards="cards" />
       </div>
     </div>
-    <button @click="extractRandomCard">Extract Random Card</button>
-    <button @click="placeCard">Place Card</button>
-    
+    <button @click="extractCard">Shuffle Card</button>
   </div>
 </template>
 
 <script>
 import Card from './Card.vue';
+import cardData from './data/card.json'
+
 export default {
   name: 'MapComponent',
   components: {
@@ -26,28 +25,39 @@ export default {
   },
   data() {
     return {
-      cardLayout: Array(6).fill().map(() => Array(6).fill({})), 
-      extractedCard: null, // Variable to store the extracted card
-       cards: [
-        {
-          title: 'Event',
-          description: 'Choose your choice',
-          flipped: false,
-          choices: ['Choice 1', 'Choice 2', 'Choice 3'],
-          image: 'path/to/your/card/image.jpg', 
-        },
-      ],
+      cardLayout: [], 
+      //  cards: [
+      //   {
+      //     title: 'Event',
+      //     description: 'Choose your choice',
+      //     flipped: false,
+      //     choices: ['Choice 1', 'Choice 2', 'Choice 3'],
+      //     image: 'path/to/your/card/image.jpg', 
+      //   },
+      // ],
     };
   },
   methods: {
-    extractRandomCard() {
-      // Logic to extract a random card from the card layout
-      // Assign the extracted card to the extractedCard variable
+    initializeCardLayout() {
+      // Shuffle cards and create a 6x6 layout
+      const shuffledCards = this.shuffleCards(cardData);
+      this.cardLayout = Array.from({ length: 6 }, (_, rowIndex) =>
+        shuffledCards.slice(rowIndex * 6, rowIndex * 6 + 6)
+      );
     },
-    placeCard() {
-      // Logic to place the extracted card back into the card layout
-      // Update the cardLayout array with the placed card
-    }
+    shuffleCards(cards) {
+      const shuffled = [...cards];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    },
+    extractCard() {
+      if (this.cardLayout.length === 0) {
+        this.initializeCardLayout();
+      }
+    },
   }
 };
 </script>
