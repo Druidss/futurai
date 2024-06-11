@@ -6,8 +6,6 @@
 <template>
   <div class="card-container">
     <div
-      v-for="(card, index) in cards"
-      :key="index"
       class="card"
       :class="{ flipped: card.flipped }"
       @click="handleCardClick(card)"
@@ -42,10 +40,10 @@ import { reactive, toRefs } from 'vue';
 export default {
   name: 'CardComponent',
   props: {
-    cards: {
+    card: {
       type: Object,
       required: true,
-      default: () => ({ choices: [['Choice 1', 'Choice 2', 'Choice 3']] }), 
+      default: () => ({}), 
     },
   },
   data() {
@@ -69,9 +67,8 @@ export default {
 
     const initializeChoices = (cardIndex, choiceIndex) => {
       if (!state.selectedChoices[cardIndex]) {
-        state.selectedChoices[cardIndex] = []; // Directly set the array
+        state.selectedChoices[cardIndex] = []; 
       }
-      // Ensure the inner array at choiceIndex is initialized
       if (typeof state.selectedChoices[cardIndex][choiceIndex] === 'undefined') {
         state.selectedChoices[cardIndex][choiceIndex] = false; // Initialize the boolean value
       }

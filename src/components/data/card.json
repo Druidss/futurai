@@ -22,5 +22,30 @@
     "flipped": false,
     "choices": ["Choice 1", "Choice 2", "Choice 3"],
     "image": "../../assets/imgs/cardinfo.png"
+  },
+  {
+    "id": 4,
+    "title": "Event 3",
+    "description": "Choose your choice",
+    "flipped": false,
+    "choices": ["Choice 1", "Choice 2", "Choice 3"],
+    "image": "../../assets/imgs/cardinfo.png"
+  },
+  {
+    "id": 5,
+    "title": "Event 5",
+    "description": "Choose your choice",
+    "flipped": false,
+    "choices": ["Choice 1", "Choice 2", "Choice 3"],
+    "image": "../../assets/imgs/cardinfo.png"
+  },
+  {
+    "id": 6,
+    "title": "Event 6",
+    "description": "Choose your choice",
+    "flipped": false,
+    "choices": ["Choice 1", "Choice 2", "Choice 3"],
+    "image": "../../assets/imgs/cardinfo.png"
   }
+
 ]
