@@ -11,6 +11,11 @@
 
 <script>
 export default {
+    data() {
+    return {
+      selectedDirection: '', // Track the currently selected direction
+    };
+  },
   methods: {
     moveDown() {
       // Add your logic for moving down here
