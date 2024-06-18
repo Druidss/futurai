@@ -36,6 +36,8 @@
 
 import cardBack from '../assets/imgs/cardback.png'; 
 import { reactive, toRefs } from 'vue';
+import { usePlayStatusStore } from '../stores/playStatus'
+
 
 export default {
   name: 'CardComponent',
@@ -60,7 +62,8 @@ export default {
     },
   },
 
-  setup() {
+  setup(props) {
+    const playStatusStore = usePlayStatusStore()
     const state = reactive({
       selectedChoices: []
     });
@@ -77,12 +80,19 @@ export default {
     const handleCheckboxChange = (cardIndex, choiceIndex) => {
       initializeChoices(cardIndex, choiceIndex);
       storeCheckboxStates();
+      if (state.selectedChoices[cardIndex][choiceIndex]) {
+        playStatusStore.addEvent({
+          cardId: props.card.id,
+          choice: props.card.choices[choiceIndex]
+        })
+      }
     };
     const storeCheckboxStates = () => {
       console.log(state.selectedChoices);
     };
    return {
       ...toRefs(state),
+      handleCardClick,
       handleCheckboxChange
     };
   }
