@@ -4,7 +4,7 @@
 提供玩家剩余步数的动态更新。 -->
 
 <script setup>
-import { usePlayStatusStore } from '../stores/playStatus'
+import { usePlayStatusStore } from '../stores/playerStatus'
 
 const playStatusStore = usePlayStatusStore()
 

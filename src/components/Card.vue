@@ -16,7 +16,7 @@
     <div class="card-back" v-else>
       <h3>{{ card.title }}</h3>
       <p>{{ card.description }}</p>
-      <ul>
+      <!-- <ul>
         <li v-for="(choice, choiceIndex) in card.choices" :key="choiceIndex">
           <input 
             type="checkbox" 
@@ -25,7 +25,7 @@
           >
           <label :for="'choice' + choiceIndex">{{ choice }}</label>
         </li>
-      </ul> 
+      </ul>  -->
       <p v-if="card.isKeyEvent">KEY CARD</p>
     </div>
     </div>
