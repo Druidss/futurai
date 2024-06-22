@@ -8,7 +8,7 @@
     <div class="card-layout">
       <div v-for="(row, rowIndex) in cardLayout" :key="rowIndex">
         <Card 
-          v-for="(card, cardIndex) in cardLayout" 
+          v-for="(card, cardIndex) in row" 
           :key="cardIndex" 
           :card="card" 
         />
@@ -21,6 +21,7 @@
 <script>
 import Card from './Card.vue';
 import cardData from './data/card.json'
+console.log('Card data:', cardData);
 
 export default {
   name: 'MapComponent',
@@ -29,19 +30,20 @@ export default {
   },
   data() {
     return {
-      cardLayout: [], // 6x6 card layout
+      cardLayout: [],
     };
   },
   methods: {
     initializeCardLayout() {
       const shuffledCards = this.shuffleCards(cardData);
-      this.cardLayout = Array.from({ length: 6 }, (_, rowIndex) =>
-        shuffledCards.slice(rowIndex * 6, rowIndex * 6 + 6)
-      );
+      console.log(cardData);
+      // this.cardLayout = Array.from({ length: 6 }, (_, rowIndex) =>
+      //   shuffledCards.slice(rowIndex * 6, rowIndex * 6 + 6)
+      // );
+      this.cardLayout = cardData;
     },
     shuffleCards(cards) {
       const shuffled = [...cards];
-
       // Fisher-Yates (Knuth) Shuffle Algorithm
       for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
