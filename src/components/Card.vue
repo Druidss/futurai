@@ -36,7 +36,7 @@
 
 import cardBack from '../assets/imgs/cardback.png'; 
 import { reactive, toRefs } from 'vue';
-import { usePlayStatusStore } from '../stores/playStatus'
+import { usePlayStatusStore } from './stores/playerStatus'
 
 
 export default {
@@ -92,7 +92,7 @@ export default {
     };
    return {
       ...toRefs(state),
-      handleCardClick,
+      // handleCardClick,
       handleCheckboxChange
     };
   }
