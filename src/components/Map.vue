@@ -11,6 +11,7 @@
           v-for="(card, cardIndex) in row" 
           :key="cardIndex" 
           :card="card" 
+          :cardIndex="cardIndex"
         />
       </div>
     </div>
@@ -21,7 +22,6 @@
 <script>
 import Card from './Card.vue';
 import cardData from './data/card.json'
-console.log('Card data:', cardData);
 
 export default {
   name: 'MapComponent',
@@ -36,7 +36,6 @@ export default {
   methods: {
     initializeCardLayout() {
       const shuffledCards = this.shuffleCards(cardData);
-      console.log(cardData);
       // this.cardLayout = Array.from({ length: 6 }, (_, rowIndex) =>
       //   shuffledCards.slice(rowIndex * 6, rowIndex * 6 + 6)
       // );

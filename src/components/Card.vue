@@ -16,16 +16,17 @@
     <div class="card-back" v-else>
       <h3>{{ card.title }}</h3>
       <p>{{ card.description }}</p>
-      <!-- <ul>
+      <ul>
         <li v-for="(choice, choiceIndex) in card.choices" :key="choiceIndex">
-          <input 
+          <!-- <input 
             type="checkbox" 
-            :id="'choice' + index" v-model="selectedChoices[cardIndex][choiceIndex]"
-            @change="handleCheckboxChange(cardIndex, choiceIndex)"
-          >
+            :id="'choice' + choiceIndex" 
+            v-model="selectedChoices[card.id][choiceIndex]"
+            @change="handleCheckboxChange(card.id, choiceIndex)"
+          > -->
           <label :for="'choice' + choiceIndex">{{ choice }}</label>
         </li>
-      </ul>  -->
+      </ul> 
       <p v-if="card.isKeyEvent">KEY CARD</p>
     </div>
     </div>
@@ -52,7 +53,7 @@ export default {
     return {
       flipped: false,
       cardBack,
-      selectedChoices: [],
+      selectedChoices: {},
     };
   },
 
@@ -78,7 +79,7 @@ export default {
     };
 
     const handleCheckboxChange = (cardIndex, choiceIndex) => {
-      initializeChoices(cardIndex, choiceIndex);
+      initializeChoices(props.cardIndex, choiceIndex);
       storeCheckboxStates();
       if (state.selectedChoices[cardIndex][choiceIndex]) {
         playStatusStore.addEvent({
@@ -92,7 +93,6 @@ export default {
     };
    return {
       ...toRefs(state),
-      // handleCardClick,
       handleCheckboxChange
     };
   }

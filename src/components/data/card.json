@@ -68,7 +68,7 @@
     },
     {
       "id": 9,
-      "title": "Event 3",
+      "title": "Event 9",
       "description": "Choose your choice",
       "flipped": false,
       "choices": ["Choice 1", "Choice 2", "Choice 3"],
@@ -76,7 +76,7 @@
     },
     {
       "id": 10,
-      "title": "Event 3",
+      "title": "Event 10",
       "description": "Choose your choice",
       "flipped": false,
       "choices": ["Choice 1", "Choice 2", "Choice 3"],
@@ -84,7 +84,7 @@
     },
     {
       "id": 11,
-      "title": "Event 5",
+      "title": "Event 11",
       "description": "Choose your choice",
       "flipped": false,
       "choices": ["Choice 1", "Choice 2", "Choice 3"],
@@ -92,7 +92,7 @@
     },
     {
       "id": 12,
-      "title": "Event 6",
+      "title": "Event 12",
       "description": "Choose your choice",
       "flipped": false,
       "choices": ["Choice 1", "Choice 2", "Choice 3"],
@@ -102,7 +102,7 @@
   [
     {
       "id": 13,
-      "title": "AI investment form",
+      "title": "AI investment form 13",
       "description": "there is an ai-based investment company that uses uses advanced algorithm& data analysis. would you trust this company",
       "flipped": false,
       "choices": ["Choice 1", "Choice 2", "Choice 3"],
@@ -110,7 +110,7 @@
     },
     {
       "id": 14,
-      "title": "Event 8",
+      "title": "Event 14",
       "description": "Choose your choice",
       "flipped": false,
       "choices": ["Choice 1", "Choice 2", "Choice 3"],
@@ -118,7 +118,7 @@
     },
     {
       "id": 15,
-      "title": "Event 3",
+      "title": "Event 15",
       "description": "Choose your choice",
       "flipped": false,
       "choices": ["Choice 1", "Choice 2", "Choice 3"],
@@ -126,7 +126,7 @@
     },
     {
       "id": 16,
-      "title": "Event 3",
+      "title": "Event 16",
       "description": "Choose your choice",
       "flipped": false,
       "choices": ["Choice 1", "Choice 2", "Choice 3"],
@@ -134,7 +134,7 @@
     },
     {
       "id": 17,
-      "title": "Event 5",
+      "title": "Event 17",
       "description": "Choose your choice",
       "flipped": false,
       "choices": ["Choice 1", "Choice 2", "Choice 3"],
@@ -142,7 +142,7 @@
     },
     {
       "id": 18,
-      "title": "Event 6",
+      "title": "Event 18",
       "description": "Choose your choice",
       "flipped": false,
       "choices": ["Choice 1", "Choice 2", "Choice 3"],
