@@ -19,7 +19,10 @@
 /* DePixelHalbfett */
 @font-face {
   font-family: 'DePixelKlein';
-  src: url('./assets/fonts/DePixelKlein.ttf');
+  src: url('./assets/fonts/DePixelKlein.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'ClashDisplay';
