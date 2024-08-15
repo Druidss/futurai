@@ -28,8 +28,7 @@
       <div class="text-9xl section3-one font-pixel text-nowrap w-screen h-1/12 bg-white text-black p-4">
         <span>GET YOUR IDENTITY REPORT GET YOUR IDENTITY REPORT</span>
       </div>
-      <div class="text-9xl section3-two font-pixel text-nowrap w-screen h-1/12 bg-white text-black p-4"
-        data-scroll-speed='-6' data-scroll-direction="horizontal">
+      <div class="text-9xl section3-two font-pixel text-nowrap w-screen h-1/12 bg-white text-black p-4">
         <span> 36 DIFFEERENT EVENTS FOR FURTUR </span>
       </div>
       <div class="z-40 text-9xl section3-three font-pixel text-nowrap w-screen h-1/12 bg-white text-black p-4"
@@ -43,7 +42,7 @@
     </div>
 
     <!-- Brief -->
-    <div class="h-screen w-screen  overflow-hidden bg-white" data-scroll-section>
+    <div class="h-screen overflow-hidden bg-white" data-scroll-section>
       <div class="flex justify-between  w-9/12 mx-auto">
         <div class="text-9xl my-36 text-black text-nowrap font-pixel" data-scroll-speed="0.1" data-scroll-sticky
           data-scroll-repeat data-scroll-delay="0.2">
@@ -65,7 +64,7 @@
     </div>
 
     <!-- Future quadrants -->
-    <div class="h-screen w-screen  overflow-hidden bg-black" data-scroll-section>
+    <div class="h-screen overflow-hidden bg-black" data-scroll-section>
       <div class="flex justify-between w-9/12 mx-auto">
         <div class="mx-24 my-36 text-white" data-scroll data-scroll-speed="0.1" data-scroll-sticky data-scroll-repeat>
           <div class="text-4xl text-nowrap font-pixel"> Future quadrants </div>
@@ -75,10 +74,39 @@
             present an alternative view of future worlds.</div>
         </div>
 
-        <div class="max-w-screen-xlmy-12  text-white" data-scroll data-scroll-speed="0.4" data-scroll-repeat>
+        <div class="max-w-screen-xl my-12  text-white" data-scroll data-scroll-speed="0.4" data-scroll-repeat>
           <img class="h-4/12 my-36" :src="four"> </img>
         </div>
       </div>
+    </div>
+
+    <!-- rule book -->
+    <div class="rule-book h-screen bg-white mx-auto p-4" data-scroll-section>
+      <div class="text-9xl text-black font-pixel m-24 md:my-12" data-scroll data-scroll-speed="0.1">RULE BOOK</div>
+      <div class="grid grid-cols-4 gap-8  md:gap-2 mx-24">
+        <div v-for="(item, index) in items" :key="index" :class="getGridClass(index)" class="flex flex-col"
+          data-scroll="" data-scroll-speed="0.2">
+          <div class="flex items-center justify-left h-16 w-16 bg-black text-white relative">
+            <span class="text-4xl font-pixel absolute bottom-0 right-0">{{ item.number }}</span>
+          </div>
+          <div class="text-left">
+            <p class="text-lg font-bold text-black max-w-36 ">{{ item.title }}</p>
+          </div>
+          <div class="text-left">
+            <p class="text-sm text-black max-w-36 md:max-w-72 mb-4">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- carousel -->
+    <div class=" h-screen flex bg-black relative">
+      <div class="text-white text-9xl text-center absolute bottom-0 transform -translate-y-1/2 font-pixel">PROGRESS</div>
+      <Carousel class="w-9/12 justify-center items-center  mx-auto">
+        <div v-for="(img, index) in images" :key="index">
+          <img :src="img.src" :alt="`Image ${index + 1}`" class="carousel-image w-full my-24 object-contain" />
+        </div>
+      </Carousel>
     </div>
   </main>
 </template>
@@ -89,16 +117,34 @@ import anime from 'animejs/lib/anime.es.js';
 import LocomotiveScroll from "locomotive-scroll";
 import { ScrollView, ScrollComponent } from 'potiah';
 import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { Carousel } from 'ant-design-vue';
 import four from '../assets/four.png';
+import img1 from '../assets/1.png';
+import img2 from '../assets/2.png';
+import img3 from '../assets/3.png';
 
 export default {
   components: {
     ScrollView,
     ScrollComponent,
+    Carousel
   }, 
   data() {
     return {
       four: four,
+      items: [
+        { number: '1', title: 'setup', description: 'Randomly draw 34 cards from the regular event deck. Add two special key cards. Shuffle the cards and lay them out to form a 6×6 grid.' },
+        { number: '2', title: 'Goal', description: 'Collect all key cards within a limited number of steps, experiencing the most events to create your digital identity.' },
+        {
+          number: '3', title: 'Mechanics', description: 'Players start from the top left corner of the grid. Each turn, players can only choose a card directly below or to the right of their current position.' },
+        { number: '4', title: 'End', description: 'At the end of the game, a short report specific to the players experiences will be generated based on each dimension of the rate me system' },
+      ],
+      images: [
+        { src: img1, alt: 'Image 1' },
+        { src: img2, alt: 'Image 2' },
+        { src: img3, alt: 'Image 3' },
+      ],
     }
   },
   mounted() {
@@ -106,9 +152,10 @@ export default {
     this.anime(); 
     this.setLocomotiveScroll();
     this.directionScroll();
+    gsap.registerPlugin(ScrollTrigger);
   },
   methods: {
-    anime:() => {
+    anime() {
       anime
         .timeline({ loop: true })
         .add({
@@ -147,7 +194,28 @@ export default {
         .to(sections[2], { duration: 6, x: 300, y: 200, ease: 'power2.inOut' }, 'start+=1')
         .to(sections[3], { duration: 2, x: -400, ease: 'power2.inOut' }, 'start+=1.5');
 
-        // tl.revert();
+      // ScrollTrigger.create({
+      //   animation: tl,
+      //   trigger: '.section3', 
+      //   start: 'top center', 
+      //   end: '+=100%', 
+      //   scrub: true, 
+      //   markers: true, 
+      // });
+    },
+    getGridClass(index) {
+      switch (index) {
+        case 0:
+          return 'col-span-1 row-start-1';
+        case 1:
+          return 'col-start-2 col-span-1 row-start-2';
+        case 2:
+          return 'col-start-3 col-span-1 row-start-1';
+        case 3:
+          return 'col-start-4 col-span-2 row-start-2';
+        default:
+          return '';
+      }
     }
   },
 }
@@ -155,10 +223,6 @@ export default {
 
 <style>
 
-.page2-opacity {
-  opacity: 1;
-  transition: opactiy 6s;
-}
 
 .section3 span {
   background-color: #fff;
@@ -186,5 +250,11 @@ export default {
 .section-five{
       top: 63%;
       transform: translateX(-10vw) rotate(3deg)
+}
+
+.carousel-image {
+  width: 100%;
+  height: 30rem;
+  object-fit: contain;
 }
 </style>
