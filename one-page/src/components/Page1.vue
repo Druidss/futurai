@@ -101,13 +101,22 @@
 
     <!-- carousel -->
     <div class=" h-screen flex bg-black relative">
-      <div class="text-white text-9xl text-center absolute bottom-0 transform -translate-y-1/2 font-pixel">PROGRESS</div>
+      <div class="text-white text-9xl text-center absolute bottom-0 transform -translate-y-1/2 font-pixel">PROGRESS
+      </div>
       <Carousel class="w-9/12 justify-center items-center  mx-auto">
         <div v-for="(img, index) in images" :key="index">
           <img :src="img.src" :alt="`Image ${index + 1}`" class="carousel-image w-full my-24 object-contain" />
         </div>
       </Carousel>
     </div>
+
+    <div class="mx-auto bg-[#151515] h-9/12">
+      <Vue3Spline :scene="{
+  url: 'https://prod.spline.design/xrQ6tM3pwImIR363/scene.splinecode',
+      }" />
+    </div>
+
+
   </main>
 </template>
 
@@ -119,6 +128,7 @@ import { ScrollView, ScrollComponent } from 'potiah';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Carousel } from 'ant-design-vue';
+import { Vue3Spline } from 'vue3-spline'
 import four from '../assets/four.png';
 import img1 from '../assets/1.png';
 import img2 from '../assets/2.png';
@@ -128,7 +138,8 @@ export default {
   components: {
     ScrollView,
     ScrollComponent,
-    Carousel
+    Carousel,
+    Vue3Spline
   }, 
   data() {
     return {
