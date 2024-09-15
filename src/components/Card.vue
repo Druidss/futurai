@@ -1,34 +1,25 @@
 <!-- 卡牌组件，显示事件和关键卡的信息，处理卡牌被点击后的逻辑。 
 显示卡牌的正面或背面。
 处理卡牌被点击后的逻辑，决定是否触发事件或关键卡。-->
-
-
 <template>
   <div class="card-container">
-    <div
-      class="card"
-      :class="{ flipped: card.flipped }"
-      @click="handleCardClick(card)"
-    >
+    <div class="card" :class="{ flipped: card.flipped }" @click="handleCardClick(card)">
       <div class="card-front" v-if="!card.flipped">
-        <img :src="cardBack" alt="Card Back" /> 
+        <img :src="cardBack" alt="Card Back" />
       </div>
-    <div class="card-back" v-else>
-      <h3>{{ card.title }}</h3>
-      <p>{{ card.description }}</p>
-      <ul>
-        <li v-for="(choice, choiceIndex) in card.choices" :key="choiceIndex">
-          <!-- <input 
-            type="checkbox" 
-            :id="'choice' + choiceIndex" 
-            v-model="selectedChoices[card.id][choiceIndex]"
-            @change="handleCheckboxChange(card.id, choiceIndex)"
-          > -->
-          <label :for="'choice' + choiceIndex">{{ choice }}</label>
-        </li>
-      </ul> 
-      <p v-if="card.isKeyEvent">KEY CARD</p>
-    </div>
+      <div class="card-back" v-else>
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+        <p>{{ selectedChoices }}</p>
+        <select v-model="selectedChoices" :disabled="isDisabled" @change="lockSelect" multiple>
+          <option v-for="(choice, choiceIndex) in card.choices" :key="choiceIndex" :value="choice"
+            @click="handleCheckboxChange(card.id, choiceIndex)">
+            {{ choice }}
+            {{ choiceIndex }}
+          </option>
+        </select>
+        <p v-if="card.isKeyEvent">KEY CARD</p>
+      </div>
     </div>
   </div>
 </template>
@@ -53,43 +44,38 @@ export default {
     return {
       flipped: false,
       cardBack,
-      selectedChoices: {},
+      selectedChoices: [],
+      isDisabled: false,
     };
   },
 
   methods: {
     handleCardClick(card) {
-      card.flipped = !card.flipped;
+      if (!card.clicked) {
+        card.flipped = !card.flipped;
+        card.clicked = true;
+      };
     },
+
+    lockSelect() {
+      if (this.selectedOption !== "") {
+        this.isDisabled = true;  
+      }
+    }
   },
 
   setup(props) {
     const playStatusStore = usePlayStatusStore()
     const state = reactive({
-      selectedChoices: []
+      selectedChoices: {}
     });
-
-    const initializeChoices = (cardIndex, choiceIndex) => {
-      if (!state.selectedChoices[cardIndex]) {
-        state.selectedChoices[cardIndex] = []; 
-      }
-      if (typeof state.selectedChoices[cardIndex][choiceIndex] === 'undefined') {
-        state.selectedChoices[cardIndex][choiceIndex] = false; // Initialize the boolean value
-      }
-    };
-
-    const handleCheckboxChange = (cardIndex, choiceIndex) => {
-      initializeChoices(props.cardIndex, choiceIndex);
-      storeCheckboxStates();
-      if (state.selectedChoices[cardIndex][choiceIndex]) {
+    const handleCheckboxChange = (cardId, choiceIndex) => {
+      if (state.selectedChoices) {
         playStatusStore.addEvent({
           cardId: props.card.id,
           choice: props.card.choices[choiceIndex]
         })
       }
-    };
-    const storeCheckboxStates = () => {
-      console.log(state.selectedChoices);
     };
    return {
       ...toRefs(state),
@@ -100,6 +86,7 @@ export default {
 </script>
 
 <style scoped>
+
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -122,15 +109,28 @@ export default {
 
 .card-back{
   border: 1px solid #ccc;
+  height: 100%;
+  margin-bottom: 20px;
 }
 .card img {
   width: 100%;
   height: auto;
 }
-li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+select {
+  -webkit-appearance: none; 
+  -moz-appearance: none;    
+  appearance: none;         
+  
+  background: none;
+  padding: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 4px
+}
+
+select[multiple] {
+  height: auto;
+  overflow: hidden;
 }
 </style>
 

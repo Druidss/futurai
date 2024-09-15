@@ -2,7 +2,7 @@
   [
     {
       "id": 1,
-      "title": "AI investment form",
+      "title": "AI investment form1",
       "description": "there is an ai-based investment company that uses uses advanced algorithm& data analysis. would you trust this company",
       "flipped": false,
       "choices": ["Choice 1", "Choice 2", "Choice 3"],
@@ -102,10 +102,10 @@
   [
     {
       "id": 13,
-      "title": "AI investment form 13",
+      "title": "AI investment form13",
       "description": "there is an ai-based investment company that uses uses advanced algorithm& data analysis. would you trust this company",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["invest 1 CB, (dice1-3: CB-2 dice4-6: CB+2)","invest 2 CB, dice1-3: CB-3 dice4-6: CB+3)", "reject: nothing happened"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
