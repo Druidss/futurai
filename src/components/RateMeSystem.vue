@@ -5,39 +5,48 @@
 <template>
   <div>
     <h2>Rate Me System</h2>
-    <div v-for="dimension in dimensions" :key="dimension.id">
-      <h3>{{ dimension.name }}</h3>
-      <p>Score: {{ dimension.score }}</p>
-      <button @click="incrementScore(dimension.id)">+</button>
-      <button @click="decrementScore(dimension.id)">-</button>
+    <div class="rateme-container">
+      <p>Consumption Behavior: {{ rateMeStore.ConsumptionBehavior }}</p>
+      <p>Health Level: {{ rateMeStore.HealthLevel }}</p>
+      <p>Social Activities: {{ rateMeStore.SocialActivities }}</p>
+      <p>Political Involvement: {{ rateMeStore.PoliticalInvolvement }}</p>
     </div>
   </div>
 </template>
 
 <script>
+import { useRateMeStore } from './stores/RateMe'
+
 export default {
   data() {
     return {
       dimensions: [
-        { id: 1, name: 'Dimension 1', score: 0 },
-        { id: 2, name: 'Dimension 2', score: 0 },
-        { id: 3, name: 'Dimension 3', score: 0 },
+        { id: 1, name: 'Consumption Behavior', score: 0 },
+        { id: 2, name: 'Health Level', score: 0 },
+        { id: 3, name: 'Social Activities', score: 0 },
+        { id: 4, name: 'Political Involvement', score: 0 },
       ],
     };
   },
   methods: {
-    incrementScore(dimensionId) {
-      const dimension = this.dimensions.find(d => d.id === dimensionId);
-      if (dimension) {
-        dimension.score++;
-      }
-    },
-    decrementScore(dimensionId) {
-      const dimension = this.dimensions.find(d => d.id === dimensionId);
-      if (dimension && dimension.score > 0) {
-        dimension.score--;
-      }
-    },
   },
+  setup() {
+    const rateMeStore = useRateMeStore()
+    return {
+      rateMeStore
+    }
+  }
 };
 </script>
+<style>
+.rateme-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  color:antiquewhite
+}
+.rateme-score{
+  margin-left: 10px;
+  font-size: 20px;
+}
+</style>

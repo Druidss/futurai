@@ -2,7 +2,15 @@
 > what do you foresee for our future?
 
 
+# Brief
+          FuturAI is an innovative online card game set in a speculative future where algorithms dictate every aspect of
+          life, from careers and relationships to leisure activities. The game incorporates elements of speculative
+          design, using a four-quadrant method to predict and explore potential futures. </br>
 
+          As players navigate through the
+          game, they confront the implications of algorithmic control, making strategic decisions that affect not only
+          their in-game progress but also their understanding of a future shaped by technology and data-driven
+          insights..
 
 
 # Vue 3 + Vite

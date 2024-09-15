@@ -145,10 +145,10 @@ export default {
     return {
       four: four,
       items: [
-        { number: '1', title: 'setup', description: 'Randomly draw 34 cards from the regular event deck. Add two special key cards. Shuffle the cards and lay them out to form a 6×6 grid.' },
-        { number: '2', title: 'Goal', description: 'Collect all key cards within a limited number of steps, experiencing the most events to create your digital identity.' },
+        { number: '1', title: 'setup', description: 'Randomly draw 36 cards from the regular event deck. Shuffle the cards and lay them out to form a 6×6 grid.' },
+        { number: '2', title: 'Goal', description: 'Collect cards within a limited number of steps, experiencing the most events to create your digital identity.' },
         {
-          number: '3', title: 'Mechanics', description: 'Players start from the top left corner of the grid. Each turn, players can only choose a card directly below or to the right of their current position.' },
+          number: '3', title: 'Mechanics', description: 'Players start from the top left corner of the grid. Each turn, players can only choose a card directly.' },
         { number: '4', title: 'End', description: 'At the end of the game, a short report specific to the players experiences will be generated based on each dimension of the rate me system' },
       ],
       images: [

@@ -10,7 +10,7 @@
       <div class="card-back" v-else>
         <h3>{{ card.title }}</h3>
         <p>{{ card.description }}</p>
-        <p>{{ selectedChoices }}</p>
+        <p> your choice:  {{ selectedChoices }}</p>
         <select v-model="selectedChoices" :disabled="isDisabled" @change="lockSelect" multiple>
           <option v-for="(choice, choiceIndex) in card.choices" :key="choiceIndex" :value="choice"
             @click="handleCheckboxChange(card.id, choiceIndex)">

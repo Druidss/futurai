@@ -5,32 +5,46 @@
 
 <template>
   <div>
+    <div v-if="isShuffled">
+      <h3 class="steps map-dashbord"> steps left: {{ steps }}</h3>
+      <RateMe class="map-rateme" />
+    </div>
     <div class="card-layout">
       <div v-for="(row, rowIndex) in cardLayout" :key="rowIndex">
-        <Card 
-          v-for="(card, cardIndex) in row" 
-          :key="cardIndex" 
-          :card="card" 
-          :cardIndex="cardIndex"
-        />
+        <Card v-for="(card, cardIndex) in row" :key="cardIndex" :card="card" :cardIndex="cardIndex" />
       </div>
     </div>
     <button @click="extractCard">Shuffle Card</button>
+    <div v-if="!isShuffled" class="rules">
+      Rules:
+      <p>setup: Randomly draw 36 cards from the regular event deck. Shuffle the cards and lay them out to form a 6x6
+        grid.</p>
+      <p>Goal: Collect cards within a limited number of steps, experiencing the most events to create your digital
+        identity.</p>
+      <p>Mechanics: Players start from the top left corner of the grid. Each turn, players can only choose a card
+        directly.</p>
+      <p>End: At the end of the game, a short report specific to the players experiences will be generated based on each
+        dimension of the rate me system.</p>
+    </div>
   </div>
 </template>
 
 <script>
+import RateMe from './RateMeSystem.vue';
 import Card from './Card.vue';
 import cardData from './data/card.json'
 
 export default {
   name: 'MapComponent',
   components: {
-    Card
+    Card,
+    RateMe
   },
   data() {
     return {
+      steps:"10",
       cardLayout: [],
+      isShuffled: false,
     };
   },
   methods: {
@@ -53,6 +67,7 @@ export default {
     extractCard() {
       if (this.cardLayout.length === 0) {
         this.initializeCardLayout();
+        this.isShuffled = true;
       }
     },
   }
@@ -60,6 +75,38 @@ export default {
 </script>
 
 <style>
+.map-dashbord{
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  color: antiquewhite;
+  background-color: rgba(255, 255, 255, 0.3);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.map-rateme {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 660px;
+  padding: 10px;
+  color: antiquewhite;
+  background-color: rgba(255, 255, 255, 0.3);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
 .card-layout {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -67,5 +114,14 @@ export default {
 }
 .card-row {
   display: contents; 
+}
+.steps{
+  color: antiquewhite;
+  font-size: x-large;
+}
+
+.rules{
+  margin: 50px;
+  color: antiquewhite;
 }
 </style>

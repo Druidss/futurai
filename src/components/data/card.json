@@ -102,11 +102,13 @@
   [
     {
       "id": 13,
-      "title": "AI investment form13",
+      "title": "AI investment form",
       "description": "there is an ai-based investment company that uses uses advanced algorithm& data analysis. would you trust this company",
       "flipped": false,
-      "choices": ["invest 1 CB, (dice1-3: CB-2 dice4-6: CB+2)","invest 2 CB, dice1-3: CB-3 dice4-6: CB+3)", "reject: nothing happened"],
-      "image": "../../assets/imgs/cardinfo.png"
+      "choices": ["invest 1 CB","invest 2 CB", "reject: nothing happened"],
+      "image": "../../assets/imgs/cardinfo.png",
+      "explain": "The company is a scam, you lost 2 CB",
+      "result": "The company is a scam, you lost 2 CB"
     },
     {
       "id": 14,
