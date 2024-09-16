@@ -30,27 +30,29 @@ export const useRateMeStore = defineStore('rateMe', {
       HealthLevel: 0,
       SocialActivities: 0,
       PoliticalInvolvement: 0,
+      History:[],
     }
   },
   actions: {
-    addEvent(category) {
-      switch (category) {
-      case 'ConsumptionBehavior':
-        this.ConsumptionBehavior += 1
-        break
-      case 'HealthLevel':
-        this.HealthLevel += 1
-        break
-      case 'SocialActivities':
-        this.SocialActivities += 1
-        break
-      case 'PoliticalInvolvement':
-        this.PoliticalInvolvement += 1
-        break
-      default:
-        console.error(`Unknown category: ${category}`)
-    }
+    addEvent() {
+      const randomCB = Math.floor(Math.random() * 5) - 2; 
+      const randomHL = Math.floor(Math.random() * 5) - 2; 
+      const randomSA = Math.floor(Math.random() * 5) - 2; 
+      const randomPI = Math.floor(Math.random() * 5) - 2; 
 
+      this.ConsumptionBehavior += randomCB;
+      this.HealthLevel += randomHL;
+      this.SocialActivities += randomSA;
+      this.PoliticalInvolvement += randomPI;
+
+      // Save the changes to the History state
+      this.History.push({
+        ConsumptionBehavior: randomCB,
+        HealthLevel: randomHL,
+        SocialActivities: randomSA,
+        PoliticalInvolvement: randomPI
+      });
+  
     },
     stepsDecrease(){
       this.Steps -= 1

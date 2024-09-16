@@ -10,14 +10,14 @@
       <div class="card-back" v-else>
         <h3>{{ card.title }}</h3>
         <p>{{ card.description }}</p>
-        <p> your choice:  {{ selectedChoices }}</p>
+        <p> your choice: {{ selectedChoices }}</p>
         <select v-model="selectedChoices" :disabled="isDisabled" @change="lockSelect" multiple>
           <option v-for="(choice, choiceIndex) in card.choices" :key="choiceIndex" :value="choice"
             @click="handleCheckboxChange(card.id, choiceIndex)">
             {{ choice }}
           </option>
         </select>
-        <p v-if="card.isKeyEvent">KEY CARD</p>
+        <p> result: {{ rateMeStore.History.slice(-1)[0] }}</p>
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@ export default {
           choice: props.card.choices[choiceIndex]
         })
         rateMeStore.stepsDecrease()
-        rateMeStore.addEvent('ConsumptionBehavior')
+        rateMeStore.addEvent()
       }
     };
    return {

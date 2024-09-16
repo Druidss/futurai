@@ -16,6 +16,9 @@
     </div>
     <button @click="extractCard">Shuffle Card</button>
     <div v-if="!isShuffled" class="rules">
+      <h1> Futur Ai</h1>
+      <h3> FuturAI is an innovative online card game set in a speculative future where algorithms dictate every aspect
+        of life</h3>
       Rules:
       <p>setup: Randomly draw 36 cards from the regular event deck. Shuffle the cards and lay them out to form a 6x6
         grid.</p>
