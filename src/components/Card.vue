@@ -15,7 +15,6 @@
           <option v-for="(choice, choiceIndex) in card.choices" :key="choiceIndex" :value="choice"
             @click="handleCheckboxChange(card.id, choiceIndex)">
             {{ choice }}
-            {{ choiceIndex }}
           </option>
         </select>
         <p v-if="card.isKeyEvent">KEY CARD</p>
@@ -29,6 +28,7 @@
 import cardBack from '../assets/imgs/cardback.png'; 
 import { reactive, toRefs } from 'vue';
 import { usePlayStatusStore } from './stores/playerStatus'
+import { useRateMeStore } from './stores/RateMe'
 
 
 export default {
@@ -66,6 +66,7 @@ export default {
 
   setup(props) {
     const playStatusStore = usePlayStatusStore()
+    const rateMeStore = useRateMeStore()
     const state = reactive({
       selectedChoices: {}
     });
@@ -75,11 +76,14 @@ export default {
           cardId: props.card.id,
           choice: props.card.choices[choiceIndex]
         })
+        rateMeStore.stepsDecrease()
+        rateMeStore.addEvent('ConsumptionBehavior')
       }
     };
    return {
       ...toRefs(state),
-      handleCheckboxChange
+      handleCheckboxChange,
+      rateMeStore
     };
   }
 };

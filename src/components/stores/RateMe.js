@@ -36,21 +36,24 @@ export const useRateMeStore = defineStore('rateMe', {
     addEvent(category) {
       switch (category) {
       case 'ConsumptionBehavior':
-        rateMeStore.ConsumptionBehavior += 1
+        this.ConsumptionBehavior += 1
         break
       case 'HealthLevel':
-        rateMeStore.HealthLevel += 1
+        this.HealthLevel += 1
         break
       case 'SocialActivities':
-        rateMeStore.SocialActivities += 1
+        this.SocialActivities += 1
         break
       case 'PoliticalInvolvement':
-        rateMeStore.PoliticalInvolvement += 1
+        this.PoliticalInvolvement += 1
         break
       default:
         console.error(`Unknown category: ${category}`)
     }
 
+    },
+    stepsDecrease(){
+      this.Steps -= 1
     }
   }
 })

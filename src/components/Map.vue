@@ -1,12 +1,12 @@
 <!-- 地图组件，显示 6x6 的卡牌布局，处理卡牌的随机抽取和铺开。 
-从正常的事件牌堆中随机抽取 34 张牌，加入两张特殊的关键牌，混洗后形成 6x6 的地图。(所有的card.data 数据都在card.json文件中)
+从正常的事件牌堆中随机抽取 36 张牌,混洗后形成 6x6 的地图。(所有的card.data 数据都在card.json文件中)
 控制卡牌的布局和显示。
 处理卡牌点击事件，触发 Event 组件的显示。-->
 
 <template>
   <div>
     <div v-if="isShuffled">
-      <h3 class="steps map-dashbord"> steps left: {{ steps }}</h3>
+      <h3 class="steps map-dashbord"> steps left: {{ rateMeStore.Steps }}</h3>
       <RateMe class="map-rateme" />
     </div>
     <div class="card-layout">
@@ -33,6 +33,7 @@
 import RateMe from './RateMeSystem.vue';
 import Card from './Card.vue';
 import cardData from './data/card.json'
+import { useRateMeStore } from './stores/RateMe'
 
 export default {
   name: 'MapComponent',
@@ -42,7 +43,6 @@ export default {
   },
   data() {
     return {
-      steps:"10",
       cardLayout: [],
       isShuffled: false,
     };
@@ -70,6 +70,12 @@ export default {
         this.isShuffled = true;
       }
     },
+  },
+  setup() {
+    const rateMeStore = useRateMeStore()
+    return {
+      rateMeStore
+    }
   }
 };
 </script>
