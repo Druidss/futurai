@@ -17,7 +17,9 @@
             {{ choice }}
           </option>
         </select>
-        <p> result: {{ rateMeStore.History.slice(-1)[0] }}</p>
+        <!-- <Modal v-model:open="open" title="result" @ok="handleOk">
+          <p> {{ rateMeStore.History.slice(-1)[0] }}</p>
+        </Modal> -->
       </div>
     </div>
   </div>
@@ -29,6 +31,8 @@ import cardBack from '../assets/imgs/cardback.png';
 import { reactive, toRefs } from 'vue';
 import { usePlayStatusStore } from './stores/playerStatus'
 import { useRateMeStore } from './stores/RateMe'
+// import Modal from 'ant-design-vue';
+
 
 
 export default {
@@ -39,6 +43,9 @@ export default {
       required: true,
       default: () => ({}), 
     },
+  },
+  components: {
+    // Modal,
   },
   data() {
     return {
@@ -123,18 +130,24 @@ export default {
 select {
   -webkit-appearance: none; 
   -moz-appearance: none;    
-  appearance: none;         
+  appearance: none;   
   
   background: none;
   padding: 4px;
   font-size: 16px;
   cursor: pointer;
-  margin: 4px
+  margin: 4px;
+  border: 0px;
+  outline: 0px;
 }
 
 select[multiple] {
   height: auto;
   overflow: hidden;
+}
+
+select option {
+  white-space: normal;
 }
 </style>
 

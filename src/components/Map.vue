@@ -26,8 +26,7 @@
         identity.</p>
       <p>Mechanics: Players start from the top left corner of the grid. Each turn, players can only choose a card
         directly.</p>
-      <p>End: At the end of the game, a short report specific to the players experiences will be generated based on each
-        dimension of the rate me system.</p>
+      <p>End: At the end of the game, a short report specific to the players experiences will be generated based RateMe system.</p>
     </div>
   </div>
 </template>

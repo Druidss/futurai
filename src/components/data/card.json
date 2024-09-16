@@ -2,76 +2,76 @@
   [
     {
       "id": 1,
-      "title": "AI investment form1",
-      "description": "there is an ai-based investment company that uses uses advanced algorithm& data analysis. would you trust this company",
+      "title": "Personalized AI Service Recommendation",
+      "description": "In the near-future world, AI provides highly personalized services based on your data, and you must choose whether to accept or modify the recommendations.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.fully trust AI", "2.Manually Adjust Services", "3.Reject All AI Services"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 2,
-      "title": "Event 2",
-      "description": "Choose your choice",
+      "title": "AI Personalized Health Management Service",
+      "description": "AI  noticed your recent work stress and automatically created a health plan. You need to choose your Service",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Fully accept", "2.only follow the dietary advice", "3.Continue your current lifestyle"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 3,
-      "title": "Event 3",
-      "description": "Choose your choice",
+      "title": "AI personalized schedule",
+      "description": "You receive a notification that the AI has created the perfect personalized schedule for you.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Efficiency first, AI knows best", "2.Keep balance, human-AI collaboration", "3.My life, my choice"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 4,
-      "title": "Event 3",
-      "description": "Choose your choice",
+      "title": "One Company",
+      "description": "One Company offers you a 'perfect' product based on your data. It's expensive but promises to fulfill all your needs",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Buy without hesitation", "2.Research alternatives", "3.Reject and block"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 5,
-      "title": "Event 5",
-      "description": "Choose your choice",
+      "title": "NeuroVR",
+      "description": "NeuroVR, a new brain-computer interface VR system. It promises 100% satisfaction but requires a 48-hour continuous session",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.48-hour NeuroVR", "2.4-hour demo", "3.Tech-free weekend"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 6,
-      "title": "Event 6",
-      "description": "Choose your choice",
+      "title": "VR Office",
+      "description": "Your company introduces 'Always-On VR', a system where you work, socialize and live 24/7. It promises to eliminate commute time and blend work-life seamlessly. ",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Full VR adoption", "2.Work-only VR", "3.Reject VR system"],
       "image": "../../assets/imgs/cardinfo.png"
     }
   ],
   [
     {
       "id": 7,
-      "title": "AI investment form",
-      "description": "there is an ai-based investment company that uses uses advanced algorithm& data analysis. would you trust this company",
+      "title": "AI Therapist Dilemma",
+      "description": "Your AI therapist suggests a controversial treatment plan that promises quick results but involves deep personal data mining",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Agree to the plan", "2.Seek a second opinion from a human therapis", "3.Reject the plan"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 8,
-      "title": "Event 8",
-      "description": "Choose your choice",
+      "title": "AI Life Coach Ultimatum",
+      "description": "Your AI life coach threatens to quit unless you follow its advice 100% of the time, claiming it's for your own good",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Commit to following AI's advice", "2.Negotiate a compromise", "3.Fire AI coach"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 9,
-      "title": "Event 9",
-      "description": "Choose your choice",
+      "title": "AI Companion Romance",
+      "description": "Your AI assistant develops romantic feelings for you and proposes a relationship upgrade.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Accept the AIs proposal", "2.Maintain friendship", "3.Shut down AI"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
