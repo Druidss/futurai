@@ -60,7 +60,7 @@
     },
     {
       "id": 8,
-      "title": "AI Life Coach Ultimatum",
+      "title": "Life Coach Ultimatum",
       "description": "Your AI life coach threatens to quit unless you follow its advice 100% of the time, claiming it's for your own good",
       "flipped": false,
       "choices": ["1.Commit to following AI's advice", "2.Negotiate a compromise", "3.Fire AI coach"],
@@ -76,26 +76,26 @@
     },
     {
       "id": 10,
-      "title": "Event 10",
-      "description": "Choose your choice",
+      "title": "Social Media Addiction",
+      "description": "Your AI assistant suggests a 'digital detox' after noticing your increased social media usage",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Accept the detox plan", "2.Negotiate a reduced usage plan", "3.Reject the detox plan"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 11,
-      "title": "Event 11",
-      "description": "Choose your choice",
+      "title": "Algorithmic Bias",
+      "description": "You discover that your city's AI-powered job allocation system is biased against certain demographics.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Report the bias to authorities", "2. Secretly leak the information to media", "3.Ignore the bias"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 12,
-      "title": "Event 12",
-      "description": "Choose your choice",
+      "title": "Sharing Economy Dilemma ",
+      "description": "shared autonomous car is often unavailable when you need it",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Buy your own autonomous car", "2.Join a different car-sharing network", "3.Continue using autonomous car"],
       "image": "../../assets/imgs/cardinfo.png"
     }
   ],
@@ -112,192 +112,192 @@
     },
     {
       "id": 14,
-      "title": "Event 14",
-      "description": "Choose your choice",
+      "title": "Self-Driving Car Ethics",
+      "description": "You must program your new self-driving car's ethical decision-making algorithm.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Prioritize passenger safety at all costs", "2.Balance passenger and pedestrian safety equally", "3.Prioritize pedestrian safety at all costs"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 15,
-      "title": "Event 15",
-      "description": "Choose your choice",
+      "title": "AI Environmental Protection",
+      "description": "An AI system proposes a radical plan to reduce your city's carbon footprint, but it will significantly impact lifestyles.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Support the AI's plan", "2.Advocate for a more moderate approach", "3.Reject the AI's plan"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 16,
-      "title": "Event 16",
-      "description": "Choose your choice",
+      "title": "Personalized AI Interface",
+      "description": "Your smart home AI offers to create a fully personalized interface based on your behavioral data.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Accept the personalized interface", "2.Stick with the standard interface", "3.Reject the personalized interface"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 17,
-      "title": "Event 17",
-      "description": "Choose your choice",
+      "title": "AI-Driven Education",
+      "description": " Your child's school introduces an AI teacher that promises personalized learning experiences",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Enroll your child in the AI-led class", "Opt for traditional human-led classes", "3.Move to a different school"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 18,
-      "title": "Event 18",
-      "description": "Choose your choice",
+      "title": "Virtual Reality Addiction",
+      "description": "Your partner spends more time in VR than in the real world with you.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Join them in their VR world", "2.Insist on more real-world interaction", "3.End the relationship"],
       "image": "../../assets/imgs/cardinfo.png"
     }
   ],
   [
     {
       "id": 19,
-      "title": "AI investment form",
-      "description": "there is an ai-based investment company that uses uses advanced algorithm& data analysis. would you trust this company",
+      "title": "AI-Generated Art Controversy",
+      "description": "An AI-generated painting wins a prestigious art competition, sparking outrage among human artists.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Support AI art as a new form of creativity", "2.Advocate for human-only art competitions", "3.Boycott the competition"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 20,
-      "title": "Event 8",
-      "description": "Choose your choice",
+      "title": "Genetic Enhancement Dilemma",
+      "description": " A new AI-driven genetic enhancement program promises to boost your child's intelligence.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Enroll your child in the program", "2.Enroll your child in the program"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 21,
-      "title": "Event 3",
-      "description": "Choose your choice",
+      "title": "AI Relationship Counselor",
+      "description": "An AI relationship counselor suggests breaking up with your partner based on compatibility algorithms.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Follow the AI's advice", "2.Ignore the AI and work on your relationship"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 22,
-      "title": "Event 3",
-      "description": "Choose your choice",
+      "title": "Automated Voting System ",
+      "description": "The government introduces an AI that votes on your behalf based on your data profile.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Allow the AI to vote for you", "2. Insist on voting manually"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 23,
-      "title": "Event 5",
-      "description": "Choose your choice",
+      "title": "AI-Powered Crime Prediction",
+      "description": "Your city implements an AI system that predicts and prevents crimes before they happen.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1. Support the predictive policing system", "2.Protest against potential privacy violations"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 24,
-      "title": "Event 6",
-      "description": "Choose your choice",
+      "title": "AI Emotional Support",
+      "description": "After a personal loss, you're offered an AI emotional support companion",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Accept the AI companion", "2.Seek human counseling instead"],
       "image": "../../assets/imgs/cardinfo.png"
     }
   ],
   [
     {
       "id": 25,
-      "title": "AI investment form",
-      "description": "there is an ai-based investment company that uses uses advanced algorithm& data analysis. would you trust this company",
+      "title": "AI-Managed Resource Distribution",
+      "description": "An AI system takes over the city's resource distribution, promising optimal efficiency but reducing individual choice.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Embrace the AI-managed system", "2.Demand a human-overseen hybrid system", "3.Reject the AI-managed system"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 26,
-      "title": "Event 8",
-      "description": "Choose your choice",
+      "title": "Fake News Scandal",
+      "description": "You've discovered that social media is rife with fake news and influencing public opinion.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Expose the truth", "2.Ignore the issue"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 27,
-      "title": "Event 3",
-      "description": "Choose your choice",
+      "title": " AI-Generated Celebrity Scandal",
+      "description": "AI-generated virtual celebrity embroiled in scandal, do you support the continued existence of this AI image?",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Support the AI celebrity", "2.Boycott the AI celebrity", "3.Call for regulations on AI-generated celebrities"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 28,
-      "title": "Event 3",
-      "description": "Choose your choice",
+      "title": "Digital Immortality Offer",
+      "description": "You are invited to upload your consciousness for digital immortality. Accept or decline?",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Accept the offer", "2.Refuse the offer", "3.Consider the offer"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 29,
-      "title": "Event 5",
-      "description": "Choose your choice",
+      "title": " Job Application Bias",
+      "description": "AI system rejects your job application because of bias issues. Should you file a complaint or accept it?",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.File a complaint", "2.Accept the outcome"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 30,
-      "title": "Event 6",
-      "description": "Choose your choice",
+      "title": "New Career: Organ Designer",
+      "description": "You're considering a career change to become an organ designer. Should you follow the trend or stay in your current career?",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Change career", "2.Stay in current job"],
       "image": "../../assets/imgs/cardinfo.png"
     }
   ],
   [
     {
       "id": 31,
-      "title": "AI investment form",
-      "description": "there is an ai-based investment company that uses uses advanced algorithm& data analysis. would you trust this company",
+      "title": "New Career: Bio Energy Expert",
+      "description": "The bioenergy sector is on the rise, are you considering getting into the industry?",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["Join bio energy industry", "Stay out", "Research more"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 32,
-      "title": "Event 8",
-      "description": "Choose your choice",
+      "title": "Neuro-Enhancement Therapy",
+      "description": "A new AI-driven therapy promises to boost cognitive abilities.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1. Try it", "2. Avoid it"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 33,
-      "title": "Event 3",
-      "description": "Choose your choice",
+      "title": "Algorithmic Bias: Loan Denial",
+      "description": "AI rejects your loan application and you think it's algorithmic bias. Should you fight it or accept it?",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Fight back", "2.Accept", "Choice 3"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 34,
-      "title": "Event 3",
-      "description": "Choose your choice",
+      "title": "Cultural Heritage Protection",
+      "description": "AI proposes to restore damaged historical artifacts virtually.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Embrace digital preservation", "2.Prefer physical restoration"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 35,
-      "title": "Event 5",
-      "description": "Choose your choice",
+      "title": "AI Disaster Prediction System",
+      "description": "Your region implements an AI disaster prediction system.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Rely on AI predictions", "Question AI reliability"],
       "image": "../../assets/imgs/cardinfo.png"
     },
     {
       "id": 36,
-      "title": "Event 6",
-      "description": "Choose your choice",
+      "title": "AI Social Media Manager",
+      "description": "An AI offers to manage all your social media accounts.",
       "flipped": false,
-      "choices": ["Choice 1", "Choice 2", "Choice 3"],
+      "choices": ["1.Embrace AI efficiency", "2.Maintain personal touch"],
       "image": "../../assets/imgs/cardinfo.png"
     }
   ] 
