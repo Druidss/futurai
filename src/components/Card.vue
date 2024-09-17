@@ -13,13 +13,25 @@
         <!-- <p> your choice: {{ selectedChoices }}</p> -->
         <select v-model="selectedChoices" :disabled="isDisabled" @change="lockSelect" multiple>
           <option v-for="(choice, choiceIndex) in card.choices" :key="choiceIndex" :value="choice"
-            @click="handleCheckboxChange(card.id, choiceIndex)">
+            @click="handleCheckboxChange(card.id, choiceIndex),showModal">
             {{ choice }}
           </option>
         </select>
-        <!-- <Modal v-model:open="open" title="result" @ok="handleOk">
-          <p> {{ rateMeStore.History.slice(-1)[0] }}</p>
-        </Modal> -->
+        <ConfigProvider :theme="{
+          token: {
+            colorBgElevated: '#242424',
+            colorPrimary: '#1a1a1a',
+          },
+        }">
+          <Modal v-model:open="open" @ok="handleOk" cancel-text="">
+            <h2 class='modal-result'> result </h2>
+            <template v-if="rateMeStore.History.length > 0">
+              <p class='modal-result' v-for="(value, key) in rateMeStore.History.slice(-1)[0]" :key="key">
+                {{ key }}: {{ value }}
+              </p>
+            </template>
+          </Modal>
+        </ConfigProvider>
       </div>
     </div>
   </div>
@@ -31,9 +43,17 @@ import cardBack from '../assets/imgs/cardback.png';
 import { reactive, toRefs } from 'vue';
 import { usePlayStatusStore } from './stores/playerStatus'
 import { useRateMeStore } from './stores/RateMe'
-// import Modal from 'ant-design-vue';
+import { Modal, ConfigProvider, theme } from 'ant-design-vue';
+import { ref } from 'vue';
+const open = ref(false);
 
-
+const showModal = () => {
+  open.value = true;
+};
+const handleOk = e => {
+  console.log(e);
+  open.value = false;
+};
 
 export default {
   name: 'CardComponent',
@@ -45,7 +65,9 @@ export default {
     },
   },
   components: {
-    // Modal,
+    Modal,
+    ConfigProvider,
+    theme
   },
   data() {
     return {
@@ -72,7 +94,6 @@ export default {
       }
     }
   },
-
   setup(props) {
     const playStatusStore = usePlayStatusStore()
     const rateMeStore = useRateMeStore()
@@ -86,12 +107,16 @@ export default {
           choice: props.card.choices[choiceIndex]
         })
         rateMeStore.addEvent()
+        open.value = true;
       }
     };
    return {
       ...toRefs(state),
       handleCheckboxChange,
-      rateMeStore
+      rateMeStore,
+      open,
+      showModal,
+      handleOk,
     };
   }
 };
@@ -149,6 +174,9 @@ select[multiple] {
 
 select option {
   white-space: normal;
+}
+.modal-result{
+  color: antiquewhite;
 }
 </style>
 
