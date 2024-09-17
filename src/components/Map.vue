@@ -19,7 +19,7 @@
       <h1> Futur Ai</h1>
       <h3> FuturAI is an innovative online card game set in a speculative future where algorithms dictate every aspect
         of life</h3>
-      Rules:
+      <h3 class="rules">Rules: </h3>
       <p>setup: Randomly draw 36 cards from the regular event deck. Shuffle the cards and lay them out to form a 6x6
         grid.</p>
       <p>Goal: Collect cards within a limited number of steps, experiencing the most events to create your digital
@@ -129,7 +129,7 @@ export default {
 }
 
 .rules{
-  margin: 50px;
+  margin-top: 50px;
   color: antiquewhite;
 }
 </style>

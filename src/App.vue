@@ -17,7 +17,7 @@ import Map from './components/Map.vue'; // Import the Map component
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: antiquewhite;
   margin-top: 60px;
 }
 </style>
