@@ -11,7 +11,7 @@
     </div>
     <div class="card-layout">
       <div v-for="(row, rowIndex) in cardLayout" :key="rowIndex">
-        <Card v-for="(card, cardIndex) in row" :key="cardIndex" :card="card" :cardIndex="cardIndex" />
+        <Card v-for="(card, cardIndex) in row" :key="cardIndex" :card="card" />
       </div>
     </div>
     <button @click="extractCard">Shuffle Card</button>
@@ -26,7 +26,8 @@
         identity.</p>
       <p>Mechanics: Players start from the top left corner of the grid. Each turn, players can only choose a card
         directly.</p>
-      <p>End: At the end of the game, a short report specific to the players experiences will be generated based RateMe system.</p>
+      <p>End: At the end of the game, a short report specific to the players experiences will be generated based RateMe
+        system.</p>
     </div>
   </div>
 </template>

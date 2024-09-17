@@ -1,26 +1,4 @@
 import { defineStore } from 'pinia'
-const initialState = {
-  Steps:{
-    currentStep: 10,
-    maxSteps: 5 
-  },
-  ConsumptionBehavior: {
-    currentStep: 0,
-    maxSteps: 5
-  },
-  HealthLevel: {
-    currentStep: 0,
-    maxSteps: 5
-  },
-  SocialActivities: {
-    currentStep: 0,
-    maxSteps: 5
-  },
-  PoliticalInvolvement: {
-    currentStep: 0,
-    maxSteps: 5
-  }
-}
 // const rateMeStore = reactive(initialState)
 export const useRateMeStore = defineStore('rateMe', {
   state: () => {

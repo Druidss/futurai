@@ -10,7 +10,6 @@
       <div class="card-back" v-else>
         <h3>{{ card.title }}</h3>
         <p>{{ card.description }}</p>
-        <!-- <p> your choice: {{ selectedChoices }}</p> -->
         <select v-model="selectedChoices" :disabled="isDisabled" @change="lockSelect" multiple>
           <option v-for="(choice, choiceIndex) in card.choices" :key="choiceIndex" :value="choice"
             @click="handleCheckboxChange(card.id, choiceIndex),showModal">
@@ -23,7 +22,7 @@
             colorPrimary: '#1a1a1a',
           },
         }">
-          <Modal v-model:open="open" @ok="handleOk" cancel-text="">
+          <Modal v-model:open="open" @ok="handleOk" @cancel="handleOk" >
             <h2 class='modal-result'> result </h2>
             <template v-if="rateMeStore.History.length > 0">
               <p class='modal-result' v-for="(value, key) in rateMeStore.History.slice(-1)[0]" :key="key">
@@ -35,6 +34,22 @@
       </div>
     </div>
   </div>
+
+  <ConfigProvider :theme="{
+    token: {
+      colorBgElevated: '#242424',
+      colorPrimary: '#1a1a1a',
+    },
+  }">
+    <Modal v-model:open="openReport" @cancel="handleOkReport" @ok="handleOkReport" 
+
+    >
+      <h2 class='modal-result'> Report </h2>
+      <p class='modal-result' v-for="(value, key) in reportData" :key="key">
+        {{ key }}: {{ value }}
+      </p>
+    </Modal>
+  </ConfigProvider>
 </template>
 
 <script>
@@ -45,14 +60,23 @@ import { usePlayStatusStore } from './stores/playerStatus'
 import { useRateMeStore } from './stores/RateMe'
 import { Modal, ConfigProvider, theme } from 'ant-design-vue';
 import { ref } from 'vue';
+import reportData from './data/report.json'
 const open = ref(false);
+const openReport = ref(false);
 
 const showModal = () => {
   open.value = true;
 };
-const handleOk = e => {
-  console.log(e);
+const handleOk = () => {
   open.value = false;
+  const rateMeStore = useRateMeStore();
+  if (rateMeStore.Steps <= 0) {
+    openReport.value = true;
+  }
+};
+const handleOkReport = () => {
+  // openReport.value = false;
+ window.location.reload();
 };
 
 export default {
@@ -75,6 +99,7 @@ export default {
       cardBack,
       selectedChoices: [],
       isDisabled: false,
+      reportData
     };
   },
 
@@ -85,6 +110,9 @@ export default {
         card.flipped = !card.flipped;
         card.clicked = true;
         rateMeStore.stepsDecrease()
+        // if (rateMeStore.Steps <= 0) {
+        //   openReport.value = true;
+        // }
       };
     },
 
@@ -115,8 +143,10 @@ export default {
       handleCheckboxChange,
       rateMeStore,
       open,
+      openReport,
       showModal,
       handleOk,
+      handleOkReport
     };
   }
 };
